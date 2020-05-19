@@ -1,0 +1,21 @@
+package Sample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+class Sample
+{
+	@Test
+	public void method()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\Downloads\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.navigate().to("http://www.leafground.com/pages/Link.html");
+		WebElement link=driver.findElement(By.partialLinkText("Find where am"));
+		String go=link.getAttribute("href");
+		System.out.println("Go"+go);
+			}
+}

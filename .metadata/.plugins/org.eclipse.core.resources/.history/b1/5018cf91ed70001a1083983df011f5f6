@@ -1,0 +1,27 @@
+package Sample1;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+class Sample1
+{
+	String abc="sample";
+	String def="sample1";
+	@Test
+	public void tes()
+	{
+		if(abc.equals("sample"))
+		{
+		SoftAssert softassert=new SoftAssert();
+		softassert.assertEquals(abc, "sampleghj");
+		System.out.println("Successfull");
+		softassert.assertEquals(def, "sample1");
+		System.out.println("Successfull1");
+		//softassert.assertAll();
+		}
+	
+	}
+	
+	
+}

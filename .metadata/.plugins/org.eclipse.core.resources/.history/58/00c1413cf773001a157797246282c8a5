@@ -1,0 +1,17 @@
+package Sample;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+class Sample
+{
+	public void Test()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\Downloads\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.navigate().to("https://www.facebook.com");
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scroll(100,100)", "");
+	}
+}

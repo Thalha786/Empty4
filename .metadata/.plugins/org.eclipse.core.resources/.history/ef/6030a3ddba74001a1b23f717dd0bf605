@@ -1,0 +1,31 @@
+package Sample;
+
+import org.testng.annotations.Test;
+import org.testng.internal.thread.ThreadTimeoutException;
+
+class Sample
+{
+	@Test(groups = {"a"})
+	public void a() throws InterruptedException
+	{
+		System.out.println("a");
+	}
+	@Test(groups = {"b"})
+	 public void b()
+	 {
+		 System.out.println("b"); 
+		 }
+	@Test(groups = {"c"})
+	 public void c()
+	 {
+		 System.out.println("c"); 
+		 }
+	
+	@Test(groups = {"d"})
+	 public void d()
+	 {
+		 System.out.println("d"); 
+		 }
+	
+	 
+}

@@ -1,0 +1,39 @@
+package Sample1;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+
+class Sample1
+{
+	public static void main(String args[]) throws IOException
+	{
+		URL url=new URL("http://dummy.restapiexample.com/employees"); 
+		HttpURLConnection httpurl=(HttpURLConnection) url.openConnection();
+		httpurl.setRequestMethod("GET");
+		httpurl.connect();
+		
+		int status_code=httpurl.getResponseCode();
+		System.out.println("Code"+status_code);
+		
+		String Message=httpurl.getResponseMessage();
+		System.out.println("Message"+Message);
+		
+		InputStream inputstream=httpurl.getInputStream();
+		InputStreamReader reader=new InputStreamReader(inputstream);
+		BufferedReader br=new BufferedReader(reader);
+		String line;
+		StringBuffer buffer=new StringBuffer();
+		while((line=br.readLine())!=null)
+		{
+		buffer.append(br);
+		}
+			System.out.println("Line"+buffer);
+		
+	}
+}

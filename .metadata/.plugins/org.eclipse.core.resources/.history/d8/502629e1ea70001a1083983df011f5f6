@@ -1,0 +1,42 @@
+package Sample1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+class Sample1
+{
+	String[][] data={
+		{"user","pass"},
+		{"user1","pass"},
+		{"user2","pass"},
+	};
+	@DataProvider(name="datavalues")
+	public String[][] dataprovidermethod()
+	{
+		return data;
+	}
+	
+	@Test(dataProvider="datavalues")
+	public void Testmethod(String uName,String Password)
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\Downloads\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.navigate().to("https://opensource-demo.orangehrmlive.com/index.php/auth/validateCredentials");
+	WebElement user_name=driver.findElement(By.xpath("//*[@id='txtUsername']"));
+	user_name.sendKeys(uName);
+	
+	WebElement user_password=driver.findElement(By.xpath("//*[@id='txtPassword']"));
+	user_password.sendKeys(Password);
+	
+	WebElement login=driver.findElement(By.xpath("//*[@id='btnLogin']"));
+	login.click();
+	
+	driver.quit();
+	
+	
+	}
+}

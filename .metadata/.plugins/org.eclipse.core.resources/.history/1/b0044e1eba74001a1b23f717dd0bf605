@@ -1,0 +1,20 @@
+package Sample;
+
+import org.testng.annotations.Test;
+import org.testng.internal.thread.ThreadTimeoutException;
+
+class Sample
+{
+	@Test(timeOut = 2000)
+	public void testig() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		System.out.println("Method1");
+	}
+	@Test(dependsOnMethods = "testig",alwaysRun = true)
+	 public void test2()
+	 {
+		 System.out.println("Method2"); 
+		 }
+	 
+}

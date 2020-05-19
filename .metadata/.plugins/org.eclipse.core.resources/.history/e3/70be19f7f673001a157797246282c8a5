@@ -1,0 +1,19 @@
+package Sample;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+class Sample
+{
+	@Test(retryAnalyzer = RetryAnalyzer.class)
+	public void Test1()
+	{
+		Assert.assertEquals(true, false);
+	}
+	
+	@Test(retryAnalyzer = RetryAnalyzer.class)
+	public void Test2()
+	{
+		Assert.assertEquals(true, true);
+	}
+}

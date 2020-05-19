@@ -1,0 +1,9 @@
+package Sample1;
+class Sample1
+{
+	
+	public void Test()
+	{
+		
+	}
+}

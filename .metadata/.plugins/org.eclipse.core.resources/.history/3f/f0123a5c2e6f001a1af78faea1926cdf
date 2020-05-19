@@ -1,0 +1,28 @@
+
+package Sample;
+import java.io.*;
+
+import org.testng.annotations.Test;
+class Sample{
+	
+	@Test
+	public void c()
+	{
+	System.out.println("c");
+	}
+	@Test(dependsOnMethods="b")
+	public void a()
+	{
+	System.out.println("a");
+	}
+	@Test(enabled=true)
+	public void b()
+	{
+	System.out.println("b");
+	}
+	@Test
+	public void d()
+	{
+	System.out.println("d");
+	}
+}

@@ -1,0 +1,40 @@
+class Sample
+{
+	public void Beforesuite()
+	{
+		System.out.println("Before suite");
+	}
+	public void BeforeClass()
+	{
+		System.out.println("Before Class");
+	}
+	public void BeforeTest()
+	{
+		System.out.println("Before Test");
+	}
+	public void BeforeMethod()
+	{
+		System.out.println("Before Method");
+	}
+	@Test
+	public void Test()
+	{
+		System.out.println("Main Test");
+	}
+	public void Aftersuite()
+	{
+		System.out.println("After suite");
+	}
+	public void AfterClass()
+	{
+		System.out.println("After Class");
+	}
+	public void AfterTest()
+	{
+		System.out.println("After Test");
+	}
+	public void AfterMethod()
+	{
+		System.out.println("After Method");
+	}
+}

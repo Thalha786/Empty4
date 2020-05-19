@@ -1,0 +1,14 @@
+package Pagefactory;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeClass;
+
+public class LoginPage {
+@BeforeClass
+	public  void Login(WebDriver driver)
+	{
+		 driver.findElement(By.xpath("")).click();;
+	}
+}

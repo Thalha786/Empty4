@@ -1,0 +1,9 @@
+package Sample1;
+class Sample1
+{
+	@Test
+	public void Test()
+	{
+		
+	}
+}

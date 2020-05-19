@@ -1,0 +1,11 @@
+package Sample;
+
+public class Sample {
+	
+	@Test
+	public void start()
+	{
+	System.out.println("Start");
+	}
+
+}

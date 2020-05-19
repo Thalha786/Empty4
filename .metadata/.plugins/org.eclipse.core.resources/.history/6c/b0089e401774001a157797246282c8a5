@@ -1,0 +1,27 @@
+package Sample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+class Sample
+{
+	public static void main(String args[]) throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Public\\Downloads\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.navigate().to("http://www.google.com");
+		driver.manage().window().maximize();
+		WebElement tamil=driver.findElement(By.xpath("//*[text()='தமிழ்']"));
+		String link1=tamil.getCssValue("text-decoration");
+		System.out.println("before"+link1);
+		Actions action=new Actions(driver);
+		action.moveToElement(tamil).perform();
+		String link12=tamil.getCssValue("text-decoration");
+		System.out.println("After"+link12);
+		
+	}
+}
